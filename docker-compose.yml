@@ -28,6 +28,9 @@ services:
       - db
     env_file:
       - .myapp.env
+    # needs for rails debug
+    tty: true
+    stdin_open: true
   sidekiq:
     build: .
     command: bundle exec sidekiq -C config/sidekiq.yml
@@ -35,6 +38,12 @@ services:
       - .:/myapp
     env_file:
       - .myapp.env
+  bundle:
+    # railsdocker_web local web container name
+    image: railsdocker_web
+    command: echo This is bundle container, this container used as store of ruby gems
+    volumes:
+      - /bundle
 volumes: 
   myapp-postgres:
   myapp-redis:
