@@ -13,7 +13,7 @@ COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 
 # Bundler will store gems in /bundle
-ENV BUNDLE_PATH=/bundle
+ENV BUNDLE_PATH=/gems
 
-RUN bundle install
+# RUN bundle install
 COPY . /myapp

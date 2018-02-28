@@ -4,8 +4,6 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
@@ -36,11 +34,20 @@ gem 'jbuilder', '~> 2.5'
 gem 'unicorn', '~> 5.4'
 gem 'sidekiq', '~> 5.1', '>= 5.1.1'
 gem 'redis-rails', '~> 5.0', '>= 5.0.2'
+# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+#gem 'rack-cors'
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails", "~> 3.7", ">= 3.7.1"
+  # gem "faker", "~> 1.8", ">= 1.8.4"
+  # gem "faker-russian", "~> 0.0.6"
+  # gem "factory_bot_rails", "~> 4.8", ">= 4.8.2"
+  # gem "rubocop", "~> 0.51.0"
+  # gem 'pry'
+  # gem 'pry-rescue', '~> 1.4', '>= 1.4.5'
 end
 
 group :development do
